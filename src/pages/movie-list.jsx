@@ -4,13 +4,15 @@ import { useEffect, useState } from "react";
 export default function MovieList() {   
 
     const [movies, setMovies] = useState(null);
-
+    const [error, setError] = useState(null);
     useEffect(() => {
         axios.get("http://localhost:3030/movies")
         .then((response) => {
             setMovies(response.data);
+        }).catch((error) => {
+            setError(error);
         });
-    });
+    },[]);
 
     const renderMovies = () => {
         if (!movies) {
@@ -25,6 +27,9 @@ export default function MovieList() {
             );
         });
     }
+
+    if(error) return <p>{error.message}</p>;
+    if(!movies) return <p>No movies to show</p>;
 
     return (
         <div>
