@@ -1,0 +1,40 @@
+{
+    "movies":[
+        {
+            "id":1,
+            "title":"The Shawshank Redemption",
+            "year":1994,
+            "genre":"Drama",
+            "director":"Frank Darabont",
+            "actors":"Tim Robbins, Morgan Freeman, Bob Gunton, William Sadler",
+            "description": ""
+        }, 
+        {
+            "id":2,
+            "title":"The Godfather",
+            "year":1972,
+            "genre":"Crime, Drama",
+            "director":"Francis Ford Coppola",
+            "actors":"Marlon Brando, Al Pacino, James Caan, Richard S. Castellano",
+            "description": ""
+        },
+        {
+            "id":3,
+            "title":"The Godfather: Part II",
+            "year":1974,
+            "genre":"Crime, Drama",
+            "director":"Francis Ford Coppola",
+            "actors":"Al Pacino, Robert Duvall, Diane Keaton, Robert De Niro",
+            "description": ""
+        },
+        {
+            "id":4,
+            "title":"The Dark Knight",
+            "year":2008,
+            "genre":"Action, Crime, Drama, Thriller",
+            "director":"Christopher Nolan",
+            "actors":"Christian Bale, Heath Ledger, Aaron Eckhart, Michael Caine",
+            "description": ""
+        }
+    ]
+}
