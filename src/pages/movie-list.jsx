@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-//import { getMovies } from "../services/movies";
 import { MoviesAPI } from "../services/moviesAPI";
 
 export default function MovieList() {   
@@ -20,21 +19,31 @@ export default function MovieList() {
         }
         return movies.map((movie) => {
             return (
-                <li key={movie.id}>
-                    <h2>{movie.title}</h2>
-                    <p>{movie.actors}</p>
-                </li>
+                <div key={movie.id} className="col-md-4 mb-4">
+            <div className="card">
+              <img
+                src={movie.posterUrl}
+                className="card-img-top"
+                alt={movie.title}
+              />
+              <div className="card-body">
+                <h5 className="card-title">{movie.title}</h5>
+                <p className="card-text">{movie.description}</p>
+              </div>
+            </div>
+          </div>
             );
         });
     }
 
     if(error) return <p>{error.message}</p>;
-    //if(!movies) return <p>No movies to show</p>;
+    if(!movies) return <p>No movies to show</p>;
 
     return (
-        <div>
-            <h1>Movies</h1>
-            <ul>{renderMovies()}</ul>
+        <div className="container">
+            <div className="row">
+                {renderMovies()}
+            </div>
         </div>
     )   
 
