@@ -19,6 +19,34 @@ export const MoviesAPI = {
             signal: cancel ? cancelApiObject[this.getAll.name].handleRequestCancellation().signal : undefined,
         })
         return response.data;
+    },
+    addMovie: async function(movie, cancel = false){
+        const response = await axiosClient.request({
+            url:'/movies',
+            method: 'POST',
+            data: movie,
+            signal: cancel ? cancelApiObject[this.addMovie.name].handleRequestCancellation().signal : undefined,
+        })
+        return response.data;
+    },
+    removeMovie: async function(id, cancel = false){
+        const response = await axiosClient.request({
+            url:`/movies/${id}`,
+            method: 'DELETE',
+            signal: cancel ? cancelApiObject[this.removeMovie.name].handleRequestCancellation().signal : undefined,
+        })
+        return response.data;
+    },
+
+    mockDelete: async function(id){
+        let movies = [];
+        this.getAll().then((response) => {
+            movies = response;
+        }).catch((error) => {
+            console.log(error);
+        });
+        movies = movies.filter((movie) => movie.id !== id);
+        return movies;
     }
 }
 
