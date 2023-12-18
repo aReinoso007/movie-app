@@ -1,14 +1,15 @@
-import axios from "axios";
 import { useEffect, useState } from "react";
+import { getMovies } from "../services/movies";
 
 export default function MovieList() {   
 
     const [movies, setMovies] = useState(null);
     const [error, setError] = useState(null);
     useEffect(() => {
-        axios.get("http://localhost:3030/movies")
+        getMovies()
         .then((response) => {
-            setMovies(response.data);
+            console.log("response", response)
+            setMovies(response);
         }).catch((error) => {
             setError(error);
         });
@@ -29,7 +30,7 @@ export default function MovieList() {
     }
 
     if(error) return <p>{error.message}</p>;
-    if(!movies) return <p>No movies to show</p>;
+    //if(!movies) return <p>No movies to show</p>;
 
     return (
         <div>
