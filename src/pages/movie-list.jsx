@@ -1,14 +1,13 @@
 import { useEffect, useState } from "react";
-import { getMovies } from "../services/movies";
+//import { getMovies } from "../services/movies";
+import { MoviesAPI } from "../services/moviesAPI";
 
 export default function MovieList() {   
 
     const [movies, setMovies] = useState(null);
     const [error, setError] = useState(null);
     useEffect(() => {
-        getMovies()
-        .then((response) => {
-            console.log("response", response)
+        MoviesAPI.getAll().then((response) => {
             setMovies(response);
         }).catch((error) => {
             setError(error);
