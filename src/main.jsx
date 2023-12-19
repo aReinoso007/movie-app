@@ -3,9 +3,9 @@ import ReactDOM from 'react-dom/client'
 import './index.css'
 import { RouterProvider, createBrowserRouter } from 'react-router-dom'
 import Root from './routes/root.jsx'
-import ErrorPage from './pages/error-page.jsx'
-import MovieList from './pages/movie-list.jsx'
-import MovieDetail from './pages/movie-detail.jsx'
+import ErrorPage from './pages/ErrorPage.jsx'
+import MovieList from './pages/MovieList.jsx'
+import MovieDetail from './pages/MovieDetail.jsx'
 
 const router = createBrowserRouter([
   {
