@@ -1,32 +1,39 @@
 import { Link, Outlet } from "react-router-dom";
+import {
+  Navbar, Nav,
+  NavbarBrand, NavItem
+} from 'reactstrap';
 
 export default function Root() {
-  const links =[
+  const links = [
     {
-      label: 'Home', path:'/',
+      label: "Home",
+      path: "/",
     },
     {
-      label: 'Movies', path:'/movies',
-    }
-  ]
+      label: "Movies",
+      path: "/movies",
+    },
+  ];
 
   const renderedLinks = links.map((link) => {
     return (
-      <Link 
-        key={link.label} 
-        to={link.path} 
-        className="mb-3"
-        >
-        {link.label}
-      </Link>
+      <NavItem key={link.path}>
+        <Link to={link.path} className="nav-link">
+          {link.label}
+        </Link>
+      </NavItem>
     );
   });
 
   return (
     <>
-      <div className="sticky top-0 overflow-y-scroll flex flex-col items-start">
-      {renderedLinks}
-    </div>
+      <Navbar fixed="top" color="light" light expand="md" className="border-bottom border-gray bg-white">
+        <NavbarBrand href="/">Movie App</NavbarBrand>
+        <Nav className="mr-auto" navbar>
+          {renderedLinks}
+        </Nav>
+      </Navbar>
       <div id="detail">
         <Outlet />
       </div>
