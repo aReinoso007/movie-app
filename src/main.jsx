@@ -5,7 +5,6 @@ import { RouterProvider, createBrowserRouter } from 'react-router-dom'
 import Root from './routes/root.jsx'
 import ErrorPage from './pages/ErrorPage.jsx'
 import MovieList from './pages/MovieList.jsx'
-import MovieDetail from './pages/MovieDetail.jsx'
 
 const router = createBrowserRouter([
   {
@@ -14,12 +13,12 @@ const router = createBrowserRouter([
     errorElement: <ErrorPage/>,
     children:[
       {
-        path:'movies',
+        path:'',
         element: <MovieList />
       },
       {
-        path:'movies/:movieId',
-        element: <MovieDetail />
+        path:'/movies',
+        element: <MovieList />
       }
     ]
   },

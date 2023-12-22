@@ -3,7 +3,7 @@ import { MoviesAPI } from "../services/moviesAPI";
 import MovieCard from "../components/MovieCard";
 import { Button, Col, Container, Row } from "reactstrap";
 import AddModal from "../components/AddModal";
-import MovieDetail from "./MovieDetail";
+import MovieDetail from "../components/MovieDetail";
 
 export default function MovieList() {
   const [movies, setMovies] = useState(null);
@@ -38,7 +38,7 @@ export default function MovieList() {
   const handleDelete = async (movieId) => {
     try {
       await MoviesAPI.removeMovie(movieId);
-      fetchMovies(); // Fetch movies again after successful delete
+      fetchMovies(); 
       closeDetailModal();
     } catch (error) {
       console.error('Failed to delete movie:', error);

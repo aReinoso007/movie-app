@@ -7,10 +7,6 @@ import {
 export default function Root() {
   const links = [
     {
-      label: "Home",
-      path: "/",
-    },
-    {
       label: "Movies",
       path: "/movies",
     },
