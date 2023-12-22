@@ -1,12 +1,19 @@
 import { useEffect, useState } from "react";
 import { MoviesAPI } from "../services/moviesAPI";
 import MovieCard from "../components/MovieCard";
-import { Col, Container, Row } from "reactstrap";
+import { Button, Col, Container, Row } from "reactstrap";
+import AddModal from "../components/AddModal";
 
 export default function MovieList() {
   const [movies, setMovies] = useState(null);
   const [error, setError] = useState(null);
+  const [isModalOpen, setIsModalOpen] = useState(false); 
+  
   useEffect(() => {
+    fetchMovies();
+  }, []);
+
+  const fetchMovies = () =>{
     MoviesAPI.getAll()
       .then((response) => {
         setMovies(response);
@@ -14,7 +21,7 @@ export default function MovieList() {
       .catch((error) => {
         setError(error);
       });
-  }, []);
+  }
 
   const renderMovies= () =>{
     if (!movies) {
@@ -29,11 +36,33 @@ export default function MovieList() {
     });
   }
 
+  const toggleModal = () => {
+    console.log('toggleModal');
+    setIsModalOpen(!isModalOpen);
+  }
+
+  const handleClose = () =>{
+    setIsModalOpen(false);
+  }
+  
+
   if (error) return <p>{error.message}</p>;
   if (!movies) return <p>No movies to show</p>;
 
+  const modal = (
+    <AddModal 
+      isModalOpen={isModalOpen} 
+      toggleModal={toggleModal} 
+      onClose={handleClose}
+      onMovieAdded={fetchMovies}
+    />
+  );
+
+
   return (
     <Container className="mt-4 pt-5">
+        <Button color="primary" className="mb-4" onClick={toggleModal}>Add Movie</Button>
+        {isModalOpen && modal}
         <div className="wrapper mt-4">
         <Row md={3} xs={1} lg={4} className="g-4">
             {renderMovies()}

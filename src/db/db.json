@@ -1,44 +1,64 @@
 {
-    "movies":[
-        {
-            "id":1,
-            "title":"The Shawshank Redemption",
-            "year":1994,
-            "genre":"Drama",
-            "director":"Frank Darabont",
-            "actors":"Tim Robbins, Morgan Freeman, Bob Gunton, William Sadler",
-            "description": "The Shawshank Redemption is a 1994 American prison drama film written and directed by Frank Darabont, based on the 1982 Stephen King novella Rita Hayworth and Shawshank Redemption. The film tells the story of banker Andy Dufresne (Tim Robbins), who is sentenced to life in Shawshank State Penitentiary for the murders of his wife and her lover, despite his claims of innocence. Over the following two decades, he befriends a fellow prisoner, contraband smuggler Ellis Red Redding (Morgan Freeman), and becomes instrumental in a money laundering operation led by the prison warden Samuel Norton (Bob Gunton). William Sadler, Clancy Brown, Gil Bellows, and James Whitmore appear in supporting roles",
-            "posterUrl": "https://m.media-amazon.com/images/S/pv-target-images/66b4ed8b965ec8dbb658a907be990c7412d077e8c66dd1197011c9396bbb1bc5.jpg"
-        }, 
-        {
-            "id":2,
-            "title":"The Godfather",
-            "year":1972,
-            "genre":"Crime, Drama",
-            "director":"Francis Ford Coppola",
-            "actors":"Marlon Brando, Al Pacino, James Caan, Richard S. Castellano",
-            "description": "The Godfather is a 1972 American epic crime film[2] directed by Francis Ford Coppola, who co-wrote the screenplay with Mario Puzo, based on Puzo's best-selling 1969 novel of the same title. The film stars Marlon Brando, Al Pacino, James Caan, Richard Castellano, Robert Duvall, Sterling Hayden, John Marley, Richard Conte and Diane Keaton. It is the first installment in The Godfather trilogy, chronicling the Corleone family under patriarch Vito Corleone (Brando) from 1945 to 1955. It focuses on the transformation of his youngest son, Michael Corleone (Pacino), from reluctant family outsider to ruthless mafia boss.",
-            "posterUrl": "https://m.media-amazon.com/images/M/MV5BM2MyNjYxNmUtYTAwNi00MTYxLWJmNWYtYzZlODY3ZTk3OTFlXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_FMjpg_UX1000_.jpg"
-        },
-        {
-            "id":3,
-            "title":"The Godfather: Part II",
-            "year":1974,
-            "genre":"Crime, Drama",
-            "director":"Francis Ford Coppola",
-            "actors":"Al Pacino, Robert Duvall, Diane Keaton, Robert De Niro",
-            "description": "The Godfather Part II is a 1974 American epic crime film. The film is produced and directed by Francis Ford Coppola, loosely based on the 1969 novel The Godfather by Mario Puzo, who co-wrote the screenplay with Coppola. It is both a sequel and a prequel to the 1972 film The Godfather, presenting parallel dramas: one picks up the 1958 story of Michael Corleone (Al Pacino), the new Don of the Corleone family, protecting the family business in the aftermath of an attempt on his life; the prequel covers the journey of his father, Vito Corleone (Robert De Niro), from his Sicilian childhood to the founding of his family enterprise in New York City. The ensemble cast also features Robert Duvall, Diane Keaton, Talia Shire, Morgana King, John Cazale, Mariana Hill, and Lee Strasberg.", 
-            "posterUrl": "https://m.media-amazon.com/images/M/MV5BMWMwMGQzZTItY2JlNC00OWZiLWIyMDctNDk2ZDQ2YjRjMWQ0XkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_.jpg"
-        },
-        {
-            "id":4,
-            "title":"The Dark Knight",
-            "year":2008,
-            "genre":"Action, Crime, Drama, Thriller",
-            "director":"Christopher Nolan",
-            "actors":"Christian Bale, Heath Ledger, Aaron Eckhart, Michael Caine",
-            "description": "The plot follows the vigilante Batman, police lieutenant James Gordon, and district attorney Harvey Dent, who form an alliance to dismantle organized crime in Gotham City. Their efforts are derailed by the Joker, an anarchistic mastermind who seeks to test how far Batman will go to save the city from chaos.",
-            "posterUrl": "https://m.media-amazon.com/images/M/MV5BMTMxNTMwODM0NF5BMl5BanBnXkFtZTcwODAyMTk2Mw@@._V1_.jpg"
-        }
-    ]
+  "movies": [
+    {
+      "id": 1,
+      "title": "The Shawshank Redemption",
+      "year": 1994,
+      "genre": "Drama",
+      "director": "Frank Darabont",
+      "actors": "Tim Robbins, Morgan Freeman, Bob Gunton, William Sadler",
+      "description": "The Shawshank Redemption is a 1994 American prison drama film written and directed by Frank Darabont, based on the 1982 Stephen King novella Rita Hayworth and Shawshank Redemption. The film tells the story of banker Andy Dufresne (Tim Robbins), who is sentenced to life in Shawshank State Penitentiary for the murders of his wife and her lover, despite his claims of innocence. Over the following two decades, he befriends a fellow prisoner, contraband smuggler Ellis Red Redding (Morgan Freeman), and becomes instrumental in a money laundering operation led by the prison warden Samuel Norton (Bob Gunton). William Sadler, Clancy Brown, Gil Bellows, and James Whitmore appear in supporting roles",
+      "posterUrl": "https://m.media-amazon.com/images/S/pv-target-images/66b4ed8b965ec8dbb658a907be990c7412d077e8c66dd1197011c9396bbb1bc5.jpg"
+    },
+    {
+      "id": 2,
+      "title": "The Godfather",
+      "year": 1972,
+      "genre": "Crime, Drama",
+      "director": "Francis Ford Coppola",
+      "actors": "Marlon Brando, Al Pacino, James Caan, Richard S. Castellano",
+      "description": "The Godfather is a 1972 American epic crime film[2] directed by Francis Ford Coppola, who co-wrote the screenplay with Mario Puzo, based on Puzo's best-selling 1969 novel of the same title. The film stars Marlon Brando, Al Pacino, James Caan, Richard Castellano, Robert Duvall, Sterling Hayden, John Marley, Richard Conte and Diane Keaton. It is the first installment in The Godfather trilogy, chronicling the Corleone family under patriarch Vito Corleone (Brando) from 1945 to 1955. It focuses on the transformation of his youngest son, Michael Corleone (Pacino), from reluctant family outsider to ruthless mafia boss.",
+      "posterUrl": "https://m.media-amazon.com/images/M/MV5BM2MyNjYxNmUtYTAwNi00MTYxLWJmNWYtYzZlODY3ZTk3OTFlXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_FMjpg_UX1000_.jpg"
+    },
+    {
+      "id": 3,
+      "title": "The Godfather: Part II",
+      "year": 1974,
+      "genre": "Crime, Drama",
+      "director": "Francis Ford Coppola",
+      "actors": "Al Pacino, Robert Duvall, Diane Keaton, Robert De Niro",
+      "description": "The Godfather Part II is a 1974 American epic crime film. The film is produced and directed by Francis Ford Coppola, loosely based on the 1969 novel The Godfather by Mario Puzo, who co-wrote the screenplay with Coppola. It is both a sequel and a prequel to the 1972 film The Godfather, presenting parallel dramas: one picks up the 1958 story of Michael Corleone (Al Pacino), the new Don of the Corleone family, protecting the family business in the aftermath of an attempt on his life; the prequel covers the journey of his father, Vito Corleone (Robert De Niro), from his Sicilian childhood to the founding of his family enterprise in New York City. The ensemble cast also features Robert Duvall, Diane Keaton, Talia Shire, Morgana King, John Cazale, Mariana Hill, and Lee Strasberg.",
+      "posterUrl": "https://m.media-amazon.com/images/M/MV5BMWMwMGQzZTItY2JlNC00OWZiLWIyMDctNDk2ZDQ2YjRjMWQ0XkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_.jpg"
+    },
+    {
+      "id": 4,
+      "title": "The Dark Knight",
+      "year": 2008,
+      "genre": "Action, Crime, Drama, Thriller",
+      "director": "Christopher Nolan",
+      "actors": "Christian Bale, Heath Ledger, Aaron Eckhart, Michael Caine",
+      "description": "The plot follows the vigilante Batman, police lieutenant James Gordon, and district attorney Harvey Dent, who form an alliance to dismantle organized crime in Gotham City. Their efforts are derailed by the Joker, an anarchistic mastermind who seeks to test how far Batman will go to save the city from chaos.",
+      "posterUrl": "https://m.media-amazon.com/images/M/MV5BMTMxNTMwODM0NF5BMl5BanBnXkFtZTcwODAyMTk2Mw@@._V1_.jpg"
+    },
+    {
+      "title": "The Perks of Being a Wallflower",
+      "year": "2012",
+      "genre": "Romance/Suspence",
+      "director": "Stephen Chbosky",
+      "actors": " Logan Lerman, Emma Watson, Ezra Miller",
+      "description": "The Perks of Being a Wallflower is a 2012 American coming-of-age romantic drama film written and directed by Stephen Chbosky, and based on his 1999 novel of the same name. Logan Lerman stars as a teenager named Charlie who writes to an unnamed friend, and these epistles chronicle his trials, tribulations, and triumphs as he goes through his freshman year of high school. The film depicts his struggles with his, unbeknownst to him, post-traumatic stress disorder, as he goes through his journey in high school making new friends, portrayed by Emma Watson and Ezra Miller. The film's ensemble cast also includes Mae Whitman, Kate Walsh, Dylan McDermott, Joan Cusack, Nina Dobrev and Paul Rudd in supporting roles.",
+      "posterUrl": "https://m.media-amazon.com/images/M/MV5BZThjMmQ5YjktMTUyMC00MjljLWJmMTAtOWIzNDIzY2VhNzQ0XkEyXkFqcGdeQXVyMTAyNjg4NjE0._V1_.jpg",
+      "id": 5
+    },
+    {
+      "title": "Ferris Bueller's Day Off ",
+      "year": "1986",
+      "genre": "Comedia / Drama",
+      "director": "John Hughes",
+      "actors": "Matthew Broderick, Alan Ruck, Mia Sara",
+      "description": "Ferris Bueller's Day Off is a 1986 American teen comedy film written, co-produced, and directed by John Hughes and co-produced by Tom Jacobson. The film stars Matthew Broderick, Mia Sara, and Alan Ruck, with supporting roles from Jennifer Grey, Jeffrey Jones, Cindy Pickett, Edie McClurg, and Lyman Ward. It tells the story of a high school slacker, Ferris, who skips school with his best friend, Cameron, and his girlfriend, Sloane, for a day in Chicago, and regularly breaks the fourth wall to explain his techniques and inner thoughts.",
+      "posterUrl": "https://m.media-amazon.com/images/M/MV5BMDA0NjZhZWUtNmI2NC00MmFjLTgwZDYtYzVjZmNhMDVmOTBkXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_FMjpg_UX1000_.jpg",
+      "id": 6
+    }
+  ]
 }

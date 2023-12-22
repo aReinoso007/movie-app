@@ -1,29 +1,33 @@
+/* eslint-disable no-unused-vars */
+/* eslint-disable react/prop-types */
 import { useState } from "react";
 import {
   Button,
-  FormGroup,
-  Input,
-  Label,
   Modal,
+  ModalHeader,
   ModalBody,
   ModalFooter,
-  ModalHeader,
+  Form,
+  FormGroup,
+  Label,
+  Input,
 } from "reactstrap";
-import { Form } from "react-router-dom";
+import { MoviesAPI } from "../services/moviesAPI";
 
-export default function AddModal() {
-  const [modal, setModal] = useState(false);
-  const [title, setTitle] = useState('');
-  const [year, setYear] = useState('');
-  const [genre, setGenre] = useState('');
-  const [director, setDirector] = useState('');
-  const [actors, setActors] = useState('');
-  const [description, setDescription] = useState('');
-  const [posterUrl, setPosterUrl] = useState('');
+const AddModal = (props) => {
+  const { toggleModal, isModalOpen, onMovieAdded } = props;
 
-  const submitForm = (e) => {
-    e.preventDefault();
-    console.log('Form Data:', {
+  const [title, setTitle] = useState("");
+  const [year, setYear] = useState("");
+  const [genre, setGenre] = useState("");
+  const [director, setDirector] = useState("");
+  const [actors, setActors] = useState("");
+  const [description, setDescription] = useState("");
+  const [posterUrl, setPosterUrl] = useState("");
+
+  const handleSave = async () => {
+    console.log('handleSave');
+    const movie = {
       title,
       year,
       genre,
@@ -31,90 +35,122 @@ export default function AddModal() {
       actors,
       description,
       posterUrl,
-    });
+    };
+  
+    try {
+      await MoviesAPI.addMovie(movie);
+      props.onMovieAdded(); // Refresh the list of movies
+      onClose(); // Close the modal after successful save
+    } catch (error) {
+      console.error('Failed to save movie:', error);
+    }
   };
 
-  const toggle = () => setModal();
+  const onClose = () => {
+    setTitle("");
+    setYear("");
+    setGenre("");
+    setDirector("");
+    setActors("");
+    setDescription("");
+    setPosterUrl("");
+    props.onClose();
+  }
 
   return (
-    <Modal isOpen={modal} toggle={toggle}>
-      <ModalHeader toggle={toggle}>Add Movie</ModalHeader>
+    <Modal isOpen={isModalOpen} toggle={toggleModal}>
+      <ModalHeader toggle={toggleModal}>Add Movie</ModalHeader>
       <ModalBody>
-      <Form className="form" onSubmit={submitForm}>
-        <FormGroup>
-          <Label>Title</Label>
-          <Input
-            type="text"
-            name="title"
-            placeholder="Enter the movie title"
-            value={title}
-            onChange={(e) => setTitle(e.target.value)}
-          />
-        </FormGroup>
-        <FormGroup>
-          <Label>Year</Label>
-          <Input
-            type="text"
-            name="year"
-            placeholder="Enter the movie year"
-            value={year}
-            onChange={(e) => setYear(e.target.value)}
-          />
-        </FormGroup>
-        <FormGroup>
-          <Label>Genre</Label>
-          <Input
-            type="text"
-            name="genre"
-            placeholder="Enter the movie genre"
-            value={genre}
-            onChange={(e) => setGenre(e.target.value)}
-          />
-        </FormGroup>
-        <FormGroup>
-          <Label>Director</Label>
-          <Input
-            type="text"
-            name="director"
-            placeholder="Enter the movie director"
-            value={director}
-            onChange={(e) => setDirector(e.target.value)}
-          />
-        </FormGroup>
-        <FormGroup>
-          <Label>Actors</Label>
-          <Input
-            type="text"
-            name="actors"
-            placeholder="Enter the movie actors"
-            value={actors}
-            onChange={(e) => setActors(e.target.value)}
-          />
-        </FormGroup>
-        <FormGroup>
-          <Label>Description</Label>
-          <Input
-            type="textarea"
-            name="description"
-            placeholder="Enter the movie description"
-            value={description}
-            onChange={(e) => setDescription(e.target.value)}
-          />
-        </FormGroup>
-        <FormGroup>
-          <Label>Poster URL</Label>
-          <Input
-            type="text"
-            name="posterUrl"
-            placeholder="Enter the movie poster URL"
-            value={posterUrl}
-            onChange={(e) => setPosterUrl(e.target.value)}
-          />
-        </FormGroup>
-        <Button type="submit">Submit</Button>
-      </Form>
+        <Form>
+          <FormGroup>
+            <Label for="title">Title</Label>
+            <Input
+              type="text"
+              name="title"
+              id="title"
+              placeholder="Title"
+              value={title}
+              onChange={(e) => setTitle(e.target.value)}
+            />
+          </FormGroup>
+          <FormGroup>
+            <Label for="year">Year</Label>
+            <Input
+              type="text"
+              name="year"
+              id="year"
+              placeholder="Year"
+              value={year}
+              onChange={(e) => setYear(e.target.value)}
+            />
+          </FormGroup>
+          <FormGroup>
+            <Label for="genre">Genre</Label>
+            <Input
+              type="text"
+              name="genre"
+              id="genre"
+              placeholder="Genre"
+              value={genre}
+              onChange={(e) => setGenre(e.target.value)}
+            />
+          </FormGroup>
+          <FormGroup>
+            <Label for="director">Director</Label>
+            <Input
+              type="text"
+              name="director"
+              id="director"
+              placeholder="Director"
+              value={director}
+              onChange={(e) => setDirector(e.target.value)}
+            />
+          </FormGroup>
+          <FormGroup>
+            <Label for="actors">Actors</Label>
+            <Input
+              type="text"
+              name="actors"
+              id="actors"
+              placeholder="Actors"
+              value={actors}
+              onChange={(e) => setActors(e.target.value)}
+            />
+          </FormGroup>
+          <FormGroup>
+            <Label for="description">Description</Label>
+            <Input
+              type="textarea"
+              name="description"
+              id="description"
+              placeholder="Description"
+              value={description}
+              onChange={(e) => setDescription(e.target.value)}
+            />
+          </FormGroup>
+          <FormGroup>
+            <Label for="posterUrl">Poster URL</Label>
+            <Input
+              type="text"
+              name="posterUrl"
+              id="posterUrl"
+              placeholder="Poster URL"
+              value={posterUrl}
+              onChange={(e) => setPosterUrl(e.target.value)}
+            />
+          </FormGroup>
+        </Form>
       </ModalBody>
-      <ModalFooter></ModalFooter>
+      <ModalFooter>
+        <Button color="primary" onClick={handleSave}>
+          Save
+        </Button>{" "}
+        <Button color="secondary" onClick={props.onClose}>
+          Cancel
+        </Button>
+      </ModalFooter>
     </Modal>
   );
-}
+};
+
+export default AddModal;
