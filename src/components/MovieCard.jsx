@@ -1,23 +1,10 @@
 /* eslint-disable react/prop-types */
 import PropTypes from "prop-types";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faTrash } from "@fortawesome/free-solid-svg-icons";
-
-export default function MovieCard({ movie, handleDelete }) {
+export default function MovieCard({ movie, onCardClick }) {
 
 
   return (
-    <div className="movie" key={movie.id}>
-      <FontAwesomeIcon
-        icon={faTrash}
-        onClick={() => handleDelete(movie.id)}
-        style={{
-          position: "absolute",
-          top: "10px",
-          left: "10px",
-          cursor: "pointer",
-        }}
-      />
+    <div className="movie" key={movie.id} onClick={()=> onCardClick(movie)}>
       <div>
         <p>{movie.year}</p>
       </div>
