@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 import PropTypes from "prop-types";
 export default function MovieCard({ movie, onCardClick }) {
 
@@ -21,4 +20,5 @@ export default function MovieCard({ movie, onCardClick }) {
 
 MovieCard.propTypes = {
   movie: PropTypes.object.isRequired,
+  onCardClick: PropTypes.func.isRequired,
 };
