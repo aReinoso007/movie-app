@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 import { Modal, ModalHeader, ModalBody, Row } from 'reactstrap';
-//import { PropTypes } from "prop-types";
+import { PropTypes } from "prop-types";
 export default function MovieDetail({movie, isOpen, toggle}) {
     return (
         <Modal isOpen={isOpen} toggle={toggle}>
@@ -24,7 +24,7 @@ export default function MovieDetail({movie, isOpen, toggle}) {
     );
 }
 
-/* MovieDetail.propTypes = {
+MovieDetail.propTypes = {
     movie: PropTypes.shape({
         id: PropTypes.number.isRequired,
         title: PropTypes.string.isRequired,
@@ -37,4 +37,4 @@ export default function MovieDetail({movie, isOpen, toggle}) {
     }),
     isOpen: PropTypes.bool,
     toggle: PropTypes.func.isRequired,
-} */
+}

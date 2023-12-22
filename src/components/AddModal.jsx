@@ -55,6 +55,7 @@ const AddModal = (props) => {
     setActors("");
     setDescription("");
     setPosterUrl("");
+    setIsModalOpen(false)
   }
 
   const toggleModal = () => {

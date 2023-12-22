@@ -1,29 +1,23 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable react-hooks/exhaustive-deps */
-import { useEffect, useState } from "react";
-import { MoviesAPI } from "../services/moviesAPI";
+import { useState } from "react";
 import MovieCard from "../components/MovieCard";
 import { Col, Container, Row } from "reactstrap";
 import AddModal from "../components/AddModal";
-import MovieDetail from "../components/MovieDetail";
 import SearchBar from "../components/Searchbar";
-import { useDebounce } from 'use-debounce';
 import useFetchMovies from "../hooks/useFetchMovies";
 import Loading from "../components/Loading";
 import ErrorDisplay from "../components/ErrorDisplay";
 
 export default function MovieList() { 
   const { movies, updateMovies, loading, error, fetchMovies } = useFetchMovies();
+
   const [searchValue, setSearchValue] = useState('');
-  const [debouncedValue] = useDebounce(searchValue, 700);
-  
-  useEffect(()=>{
-    handleSearch(debouncedValue);
-  }, [debouncedValue])
 
   const handleSearch = (value) => {
     let filteredMovies = [];
-    if(value === '' || value === null){
+    if(value === undefined) return;
+    if(value === ''){
       fetchMovies();
       return;
     }
@@ -58,7 +52,7 @@ export default function MovieList() {
   return (
     <Container className="mt-4 pt-5">
         <Row>
-          <SearchBar placeholder={'The Godfather'} onChange={(e) => handleSearch(e.target.value)}/>
+          <SearchBar placeholder={'The Godfather'} onChange={(e) => handleSearch(e)}/>
         </Row>
         {modal}
         <div className="wrapper mt-4">

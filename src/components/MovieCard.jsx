@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 import PropTypes from "prop-types";
 import { useState } from "react";
 import MovieDetail from "./MovieDetail";
