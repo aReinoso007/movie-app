@@ -37,7 +37,6 @@ export default function MovieList() {
   }
 
   const toggleModal = () => {
-    console.log('toggleModal');
     setIsModalOpen(!isModalOpen);
   }
 

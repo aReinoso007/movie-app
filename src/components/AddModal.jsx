@@ -26,7 +26,6 @@ const AddModal = (props) => {
   const [posterUrl, setPosterUrl] = useState("");
 
   const handleSave = async () => {
-    console.log('handleSave');
     const movie = {
       title,
       year,
