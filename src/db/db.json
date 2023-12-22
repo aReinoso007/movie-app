@@ -42,7 +42,7 @@
     },
     {
       "title": "The Perks of Being a Wallflower",
-      "year": "2012",
+      "year": 2012,
       "genre": "Romance/Suspence",
       "director": "Stephen Chbosky",
       "actors": " Logan Lerman, Emma Watson, Ezra Miller",
@@ -52,7 +52,7 @@
     },
     {
       "title": "Ferris Bueller's Day Off ",
-      "year": "1986",
+      "year": 1986,
       "genre": "Comedia / Drama",
       "director": "John Hughes",
       "actors": "Matthew Broderick, Alan Ruck, Mia Sara",
@@ -62,7 +62,7 @@
     },
     {
       "title": "Akira",
-      "year": "1988",
+      "year": 1988,
       "genre": "Sciecne Fiction / Actions",
       "director": "Katsuhiro Ôtomo",
       "actors": "Mitsuo Iwata, Nozomu Sasaki, Mami Koyama",
@@ -72,7 +72,7 @@
     },
     {
       "title": "Spirited away",
-      "year": "2004",
+      "year": 2004,
       "genre": "Fantasy / Adventure",
       "director": "Hayao Miyazaki",
       "actors": " Daveigh Chase, Suzanne Pleshette, Miyu Irino",
@@ -82,13 +82,23 @@
     },
     {
       "title": "Howl's Moving Castle",
-      "year": "2004",
+      "year": 2004,
       "genre": "Fantasy / Adventure",
       "director": "Hayao Miyazaki",
       "actors": " Chieko Baishô, Takuya Kimura, Tatsuya Gashûin, etc.",
       "description": "Howl's Moving Castle (Japanese: ハウルの動く城, Hepburn: Hauru no Ugoku Shiro) is a 2004 Japanese animated fantasy film written and directed by Hayao Miyazaki. It is loosely based on the 1986 novel of the same name by British author Diana Wynne Jones. The film was produced by Toshio Suzuki, animated by Studio Ghibli and distributed by Toho. The Japanese voice cast featured Chieko Baisho and Takuya Kimura, while the English dub version starred Jean Simmons, Emily Mortimer, Lauren Bacall, Christian Bale, Josh Hutcherson and Billy Crystal. The film is set in a fictional kingdom where both magic and early twentieth-century technology are prevalent, against the backdrop of a war with another kingdom. It tells the story of Sophie, a young milliner who is turned into an elderly woman by a witch who enters her shop and curses her. She encounters a wizard named Howl and gets caught up in his resistance to fighting for the king.",
       "posterUrl": "https://m.media-amazon.com/images/M/MV5BNmM4YTFmMmItMGE3Yy00MmRkLTlmZGEtMzZlOTQzYjk3MzA2XkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_FMjpg_UX1000_.jpg",
       "id": 9
+    },
+    {
+      "title": "Avatar",
+      "year": 2009,
+      "genre": "Science Fiction / Actions",
+      "director": "James Cameron",
+      "actors": " Sam Worthington, Zoe Saldana, Sigourney Weaver",
+      "description": "Avatar (marketed as James Cameron's Avatar) is a 2009 epic science fiction film directed, written, co-produced, and co-edited by James Cameron and starring Sam Worthington, Zoe Saldana, Stephen Lang, Michelle Rodriguez,[6] and Sigourney Weaver. It is the first installment in the Avatar film series. It is set in the mid-22nd century, when humans are colonizing Pandora, a lush habitable moon of a gas giant in the Alpha Centauri star system, in order to mine the valuable mineral unobtanium.[a] The expansion of the mining colony threatens the continued existence of a local tribe of Na'vi, a humanoid species indigenous to Pandora. The title of the film refers to a genetically engineered Na'vi body operated from the brain of a remotely located human that is used to interact with the natives of Pandora.",
+      "posterUrl": "https://m.media-amazon.com/images/M/MV5BZDA0OGQxNTItMDZkMC00N2UyLTg3MzMtYTJmNjg3Nzk5MzRiXkEyXkFqcGdeQXVyMjUzOTY1NTc@._V1_.jpg",
+      "id": 10
     }
   ]
 }

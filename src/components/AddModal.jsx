@@ -32,7 +32,7 @@ const AddModal = (props) => {
   const handleSave = async () => {
     const movie = {
       title,
-      year,
+      year: Number(year),
       genre,
       director,
       actors,
