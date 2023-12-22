@@ -23,6 +23,15 @@ export default function MovieList() {
       });
   }
 
+  const handleDelete = async (movieId) => {
+    try {
+      await MoviesAPI.removeMovie(movieId);
+      fetchMovies(); // Fetch movies again after successful delete
+    } catch (error) {
+      console.error('Failed to delete movie:', error);
+    }
+  };
+
   const renderMovies= () =>{
     if (!movies) {
       return <p>Loading...</p>;
@@ -30,7 +39,7 @@ export default function MovieList() {
     return movies.map((movie) => {
       return (
         <Col key={movie.id}>
-          <MovieCard movie={movie} />
+          <MovieCard movie={movie} handleDelete={handleDelete}/>
         </Col>
       );
     });
@@ -43,7 +52,6 @@ export default function MovieList() {
   const handleClose = () =>{
     setIsModalOpen(false);
   }
-  
 
   if (error) return <p>{error.message}</p>;
   if (!movies) return <p>No movies to show</p>;
