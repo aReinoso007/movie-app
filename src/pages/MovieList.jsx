@@ -60,7 +60,7 @@ export default function MovieList() {
 
   return (
     <Container className="mt-4 pt-5">
-        <Button color="primary" className="mb-4" onClick={toggleModal}>Add Movie</Button>
+        <Button color="primary" className="mb-4 add-movie-button" onClick={toggleModal}>Add Movie</Button>
         {isModalOpen && modal}
         <div className="wrapper mt-4">
         <Row md={3} xs={1} lg={4} className="g-4">

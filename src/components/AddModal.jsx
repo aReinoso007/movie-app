@@ -24,6 +24,7 @@ const AddModal = (props) => {
   const [actors, setActors] = useState("");
   const [description, setDescription] = useState("");
   const [posterUrl, setPosterUrl] = useState("");
+  const isFormValid = title && year && genre && director && actors && description && posterUrl;
 
   const handleSave = async () => {
     const movie = {
@@ -141,7 +142,7 @@ const AddModal = (props) => {
         </Form>
       </ModalBody>
       <ModalFooter>
-        <Button color="primary" onClick={handleSave}>
+        <Button color="primary" onClick={handleSave} disabled={!isFormValid}>
           Save
         </Button>{" "}
         <Button color="secondary" onClick={props.onClose}>
