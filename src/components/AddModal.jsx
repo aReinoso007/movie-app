@@ -13,6 +13,8 @@ import {
 } from "reactstrap";
 import { MoviesAPI } from "../services/moviesAPI";
 import { PropTypes } from "prop-types";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faPlus } from "@fortawesome/free-solid-svg-icons";
 
 const AddModal = (props) => {
   const { onMovieAdded } = props;
@@ -64,7 +66,10 @@ const AddModal = (props) => {
 
   return (
     <>
-      <Button color="primary" className="mb-4 add-movie-button" onClick={toggleModal} style={{ width: "10%", padding: "10px" }}>Add Movie</Button>
+      {<Button color="primary" className="btn pmd-btn-fab pmd-ripple-effect btn-primary pmd-btn-raised" onClick={toggleModal} style={{ width: "5%", padding: "10px" }}>
+      <FontAwesomeIcon icon={faPlus}/>
+      </Button> }
+      
       <Modal isOpen={isModalOpen} toggle={toggleModal}>
       <ModalHeader toggle={toggleModal}>Add Movie</ModalHeader>
       <ModalBody>

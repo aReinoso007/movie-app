@@ -2,7 +2,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { useState } from "react";
 import MovieCard from "../components/MovieCard";
-import { Col, Container, Row } from "reactstrap";
+import { Col, Container, InputGroup, Row } from "reactstrap";
 import AddModal from "../components/AddModal";
 import SearchBar from "../components/Searchbar";
 import useFetchMovies from "../hooks/useFetchMovies";
@@ -51,10 +51,10 @@ export default function MovieList() {
 
   return (
     <Container className="mt-4 pt-5">
-        <Row>
+        <InputGroup>
           <SearchBar placeholder={'The Godfather'} onChange={(e) => handleSearch(e)}/>
-        </Row>
-        {modal}
+          {modal}
+        </InputGroup>
         <div className="wrapper mt-4">
         <Row md={2} xs={1} lg={3} className="g-3">
             {renderMovies()}

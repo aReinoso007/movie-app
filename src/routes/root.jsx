@@ -24,8 +24,8 @@ export default function Root() {
 
   return (
     <>
-      <Navbar fixed="top" color="light" light expand="md" className="border-bottom border-gray bg-white">
-        <NavbarBrand href="/">Movie App</NavbarBrand>
+      <Navbar fixed="top" color="secondary" light expand="md" className="border-bottom border-gray bg-white">
+        <NavbarBrand>Movie App</NavbarBrand>
         <Nav className="mr-auto" navbar>
           {renderedLinks}
         </Nav>

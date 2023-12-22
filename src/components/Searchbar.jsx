@@ -21,7 +21,7 @@ export default function SearchBar({ placeholder, value, onChange}) {
       placeholder={placeholder}
       value={value}
       onChange={debouncedOnChange}
-      style={{ width: "90%", padding: "10px" }}
+      style={{ width: "85%", padding: "10px"}}
     />
   );
 }
