@@ -1,7 +1,8 @@
-/* eslint-disable react/prop-types */
+
 import { Modal, ModalHeader, ModalBody, Row } from 'reactstrap';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrash } from "@fortawesome/free-solid-svg-icons";
+import { PropTypes } from "prop-types";
 export default function MovieDetail({movie, isOpen, toggle, handleDelete}) {
     if (!movie) return null;
 
@@ -36,4 +37,20 @@ export default function MovieDetail({movie, isOpen, toggle, handleDelete}) {
             </ModalBody>
         </Modal>
     );
+}
+
+MovieDetail.propTypes = {
+    movie: PropTypes.shape({
+        id: PropTypes.number.isRequired,
+        title: PropTypes.string.isRequired,
+        year: PropTypes.string.isRequired,
+        genre: PropTypes.string.isRequired,
+        director: PropTypes.string.isRequired,
+        actors: PropTypes.string.isRequired,
+        description: PropTypes.string.isRequired,
+        posterUrl: PropTypes.string.isRequired
+    }),
+    isOpen: PropTypes.bool.isRequired,
+    toggle: PropTypes.func.isRequired,
+    handleDelete: PropTypes.func.isRequired
 }
