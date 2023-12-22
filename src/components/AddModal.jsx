@@ -1,5 +1,4 @@
 /* eslint-disable no-unused-vars */
-/* eslint-disable react/prop-types */
 import { useState } from "react";
 import {
   Button,
@@ -13,6 +12,7 @@ import {
   Input,
 } from "reactstrap";
 import { MoviesAPI } from "../services/moviesAPI";
+import { PropTypes } from "prop-types";
 
 const AddModal = (props) => {
   const { toggleModal, isModalOpen, onMovieAdded } = props;
@@ -154,3 +154,10 @@ const AddModal = (props) => {
 };
 
 export default AddModal;
+
+AddModal.propTypes = {
+  isModalOpen: PropTypes.bool.isRequired,
+  toggleModal: PropTypes.func.isRequired,
+  onClose: PropTypes.func.isRequired,
+  onMovieAdded: PropTypes.func.isRequired,
+};

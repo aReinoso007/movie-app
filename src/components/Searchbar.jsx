@@ -1,6 +1,5 @@
-/* eslint-disable react/prop-types */
 import { Input } from "reactstrap";
-
+import { PropTypes } from "prop-types";
 export default function SearchBar({ placeholder, value, onChange }) {
   return (
     <Input
@@ -12,3 +11,9 @@ export default function SearchBar({ placeholder, value, onChange }) {
     />
   );
 }
+
+SearchBar.propTypes = {
+  placeholder: PropTypes.string.isRequired,
+  onChange: PropTypes.func.isRequired,
+  value: PropTypes.string
+};

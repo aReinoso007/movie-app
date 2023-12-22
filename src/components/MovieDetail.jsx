@@ -1,4 +1,3 @@
-
 import { Modal, ModalHeader, ModalBody, Row } from 'reactstrap';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrash } from "@fortawesome/free-solid-svg-icons";
