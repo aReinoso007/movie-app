@@ -1,30 +1,29 @@
+/* eslint-disable react-hooks/exhaustive-deps */
+/* eslint-disable no-unused-vars */
 import { useEffect, useState } from "react";
 import { MoviesAPI } from "../services/moviesAPI";
 import MovieCard from "../components/MovieCard";
 import { Button, Col, Container, Row } from "reactstrap";
 import AddModal from "../components/AddModal";
 import MovieDetail from "../components/MovieDetail";
+import SearchBar from "../components/Searchbar";
+import { useDebounce } from 'use-debounce';
+import useFetchMovies from "../hooks/useFetchMovies";
 
 export default function MovieList() {
-  const [movies, setMovies] = useState(null);
-  const [error, setError] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false); 
   const [selectedMovie, setSelectedMovie] = useState(null);
   const [isDetailModalOpen, setDetailModalOpen] = useState(false);
+  const { movies, updateMovies, loading, error, fetchMovies } = useFetchMovies();
+  /**
+   * Using debouncing to avoid making too many requests to the API
+   */
+  const [searchValue, setSearchValue] = useState('');
+  const [debouncedValue] = useDebounce(searchValue, 700);
   
-  useEffect(() => {
-    fetchMovies();
-  }, []);
-
-  const fetchMovies = () =>{
-    MoviesAPI.getAll()
-      .then((response) => {
-        setMovies(response);
-      })
-      .catch((error) => {
-        setError(error);
-      });
-  }
+  useEffect(()=>{
+    handleSearch(debouncedValue);
+  }, [debouncedValue])
 
   const handleCardClick = (movie) => {
     setSelectedMovie(movie);
@@ -45,6 +44,31 @@ export default function MovieList() {
     }
   };
 
+  const toggleModal = () => {
+    setIsModalOpen(!isModalOpen);
+  }
+
+  const handleClose = () =>{
+    setIsModalOpen(false);
+  }
+
+  
+
+  const handleSearch = (value) => {
+    let filteredMovies = [];
+    if(value === '' || value === null){
+      fetchMovies();
+      return;
+    }
+    setSearchValue(value);
+    filteredMovies = filterMovies(movies, value);
+    updateMovies(filteredMovies);
+    setSearchValue("");
+  };
+
+  if (error) return <p>{error.message}</p>;
+  if (!movies) return <p>No movies to show</p>;
+
   const renderMovies= () =>{
     if (!movies) {
       return <p>Loading...</p>;
@@ -57,17 +81,6 @@ export default function MovieList() {
       );
     });
   }
-
-  const toggleModal = () => {
-    setIsModalOpen(!isModalOpen);
-  }
-
-  const handleClose = () =>{
-    setIsModalOpen(false);
-  }
-
-  if (error) return <p>{error.message}</p>;
-  if (!movies) return <p>No movies to show</p>;
 
   const modal = (
     <AddModal 
@@ -90,14 +103,23 @@ export default function MovieList() {
 
   return (
     <Container className="mt-4 pt-5">
-        <Button color="primary" className="mb-4 add-movie-button" onClick={toggleModal}>Add Movie</Button>
+        <Row>
+          <SearchBar placeholder={'The Godfather'} onChange={(e) => handleSearch(e.target.value)}/>
+          <Button color="primary" className="mb-4 add-movie-button" onClick={toggleModal} style={{ width: "10%", padding: "10px" }}>Add Movie</Button>
+        </Row>
         {isModalOpen && modal}
+        
         {isDetailModalOpen && movieDetail}
         <div className="wrapper mt-4">
-        <Row md={3} xs={1} lg={4} className="g-4">
+        <Row md={2} xs={1} lg={3} className="g-3">
             {renderMovies()}
+            {movies.length === 0 && <p>No movies to show</p>}
         </Row>
     </div>
     </Container>
   );
+}
+
+function filterMovies(movies, value){
+  return movies.filter(movie => movie.title.toLowerCase().includes(value.toLowerCase()));
 }

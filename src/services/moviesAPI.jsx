@@ -20,6 +20,14 @@ export const MoviesAPI = {
         })
         return response.data;
     },
+    getMoviesByTitle: async function(title, cancel = false){
+        const response = await axiosClient.request({
+            url:`/movies?title=${title}`,
+            method: 'GET',
+            signal: cancel ? cancelApiObject[this.getMoviesByTitle.name].handleRequestCancellation().signal : undefined,
+        })
+        return response.data;
+    },
     addMovie: async function(movie, cancel = false){
         const response = await axiosClient.request({
             url:'/movies',

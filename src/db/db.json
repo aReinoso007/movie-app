@@ -59,6 +59,16 @@
       "description": "Ferris Bueller's Day Off is a 1986 American teen comedy film written, co-produced, and directed by John Hughes and co-produced by Tom Jacobson. The film stars Matthew Broderick, Mia Sara, and Alan Ruck, with supporting roles from Jennifer Grey, Jeffrey Jones, Cindy Pickett, Edie McClurg, and Lyman Ward. It tells the story of a high school slacker, Ferris, who skips school with his best friend, Cameron, and his girlfriend, Sloane, for a day in Chicago, and regularly breaks the fourth wall to explain his techniques and inner thoughts.",
       "posterUrl": "https://m.media-amazon.com/images/M/MV5BMDA0NjZhZWUtNmI2NC00MmFjLTgwZDYtYzVjZmNhMDVmOTBkXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_FMjpg_UX1000_.jpg",
       "id": 6
+    },
+    {
+      "title": "Akira",
+      "year": "1988",
+      "genre": "Sciecne Fiction / Actions",
+      "director": "Katsuhiro Ôtomo",
+      "actors": "Mitsuo Iwata, Nozomu Sasaki, Mami Koyama",
+      "description": "Akira (Japanese: アキラ) is a 1988 Japanese animated cyberpunk action film[4] directed by Katsuhiro Otomo, produced by Ryōhei Suzuki and Shunzō Katō, and written by Otomo and Izo Hashimoto, based on Otomo's 1982 manga of the same name. Set in a dystopian 2019, it tells the story of Shōtarō Kaneda, the leader of a biker gang whose childhood friend, Tetsuo Shima, acquires incredible telekinetic abilities after a motorcycle accident, eventually threatening an entire military complex amid chaos and rebellion in the sprawling futuristic metropolis of Neo-Tokyo.",
+      "posterUrl": "https://m.media-amazon.com/images/M/MV5BNjFmNWYzZjMtYWIyZi00NDVmLWIxY2EtN2RiMjZiMDk4MzcyXkEyXkFqcGdeQXVyMTg2NjYzOA@@._V1_.jpg",
+      "id": 7
     }
   ]
 }

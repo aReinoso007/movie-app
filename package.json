@@ -22,7 +22,8 @@
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.21.0",
     "reactstrap": "^9.2.1",
-    "sort-by": "^1.2.0"
+    "sort-by": "^1.2.0",
+    "use-debounce": "^10.0.0"
   },
   "devDependencies": {
     "@types/react": "^18.2.43",
