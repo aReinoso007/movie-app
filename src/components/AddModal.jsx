@@ -15,7 +15,8 @@ import { MoviesAPI } from "../services/moviesAPI";
 import { PropTypes } from "prop-types";
 
 const AddModal = (props) => {
-  const { toggleModal, isModalOpen, onMovieAdded } = props;
+  const { onMovieAdded } = props;
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const [title, setTitle] = useState("");
   const [year, setYear] = useState("");
@@ -54,11 +55,16 @@ const AddModal = (props) => {
     setActors("");
     setDescription("");
     setPosterUrl("");
-    props.onClose();
+  }
+
+  const toggleModal = () => {
+    setIsModalOpen(!isModalOpen);
   }
 
   return (
-    <Modal isOpen={isModalOpen} toggle={toggleModal}>
+    <>
+      <Button color="primary" className="mb-4 add-movie-button" onClick={toggleModal} style={{ width: "10%", padding: "10px" }}>Add Movie</Button>
+      <Modal isOpen={isModalOpen} toggle={toggleModal}>
       <ModalHeader toggle={toggleModal}>Add Movie</ModalHeader>
       <ModalBody>
         <Form>
@@ -145,19 +151,18 @@ const AddModal = (props) => {
         <Button color="primary" onClick={handleSave} disabled={!isFormValid}>
           Save
         </Button>{" "}
-        <Button color="secondary" onClick={props.onClose}>
+        <Button color="secondary" onClick={toggleModal}>
           Cancel
         </Button>
       </ModalFooter>
     </Modal>
+    </>
+   
   );
 };
 
 export default AddModal;
 
 AddModal.propTypes = {
-  isModalOpen: PropTypes.bool.isRequired,
-  toggleModal: PropTypes.func.isRequired,
-  onClose: PropTypes.func.isRequired,
   onMovieAdded: PropTypes.func.isRequired,
 };

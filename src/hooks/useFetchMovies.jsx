@@ -21,9 +21,8 @@ function useFetchMovies() {
     setMovies(movies);
   }
 
-  useEffect(() => {
-    setLoading(true);
-    MoviesAPI.getAll()
+  /*
+  MoviesAPI.getAll()
       .then((response) => {
         setMovies(response);
         setLoading(false);
@@ -32,6 +31,14 @@ function useFetchMovies() {
         setError(error);
         setLoading(false);
       });
+  */
+
+  useEffect(() => {
+    setLoading(true);
+    setTimeout(() => {
+      fetchMovies();
+      setLoading(false);
+    }, 4000);
   }, []);
 
   return { movies, updateMovies, loading, error, fetchMovies };

@@ -1,5 +1,5 @@
 import { PropTypes } from "prop-types";
-export default function Error({error}){
+export default function ErrorDisplay({error}){
 
     return (
         <div className="error">
@@ -9,7 +9,7 @@ export default function Error({error}){
     )
 }
 
-Error.propTypes = {
+ErrorDisplay.propTypes = {
     error: PropTypes.shape({
         message: PropTypes.string.isRequired
     })

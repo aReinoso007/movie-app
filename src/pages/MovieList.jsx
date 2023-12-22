@@ -1,17 +1,17 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-/* eslint-disable no-unused-vars */
 import { useEffect, useState } from "react";
 import { MoviesAPI } from "../services/moviesAPI";
 import MovieCard from "../components/MovieCard";
-import { Button, Col, Container, Row } from "reactstrap";
+import { Col, Container, Row } from "reactstrap";
 import AddModal from "../components/AddModal";
 import MovieDetail from "../components/MovieDetail";
 import SearchBar from "../components/Searchbar";
 import { useDebounce } from 'use-debounce';
 import useFetchMovies from "../hooks/useFetchMovies";
+import Loading from "../components/Loading";
+import ErrorDisplay from "../components/ErrorDisplay";
 
-export default function MovieList() {
-  const [isModalOpen, setIsModalOpen] = useState(false); 
+export default function MovieList() { 
   const [selectedMovie, setSelectedMovie] = useState(null);
   const [isDetailModalOpen, setDetailModalOpen] = useState(false);
   const { movies, updateMovies, loading, error, fetchMovies } = useFetchMovies();
@@ -44,15 +44,6 @@ export default function MovieList() {
     }
   };
 
-  const toggleModal = () => {
-    setIsModalOpen(!isModalOpen);
-  }
-
-  const handleClose = () =>{
-    setIsModalOpen(false);
-  }
-
-  
 
   const handleSearch = (value) => {
     let filteredMovies = [];
@@ -65,9 +56,6 @@ export default function MovieList() {
     updateMovies(filteredMovies);
     setSearchValue("");
   };
-
-  if (error) return <p>{error.message}</p>;
-  if (!movies) return <p>No movies to show</p>;
 
   const renderMovies= () =>{
     if (!movies) {
@@ -84,9 +72,6 @@ export default function MovieList() {
 
   const modal = (
     <AddModal 
-      isModalOpen={isModalOpen} 
-      toggleModal={toggleModal} 
-      onClose={handleClose}
       onMovieAdded={fetchMovies}
     />
   );
@@ -100,15 +85,15 @@ export default function MovieList() {
     />
   )
 
+  if (error) return <ErrorDisplay error={error} />
+  if (loading) return <Loading />
 
   return (
     <Container className="mt-4 pt-5">
         <Row>
           <SearchBar placeholder={'The Godfather'} onChange={(e) => handleSearch(e.target.value)}/>
-          <Button color="primary" className="mb-4 add-movie-button" onClick={toggleModal} style={{ width: "10%", padding: "10px" }}>Add Movie</Button>
         </Row>
-        {isModalOpen && modal}
-        
+        {modal}
         {isDetailModalOpen && movieDetail}
         <div className="wrapper mt-4">
         <Row md={2} xs={1} lg={3} className="g-3">
