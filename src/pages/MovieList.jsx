@@ -8,6 +8,7 @@ import SearchBar from "../components/Searchbar";
 import useFetchMovies from "../hooks/useFetchMovies";
 import Loading from "../components/Loading";
 import ErrorDisplay from "../components/ErrorDisplay";
+import { MoviesAPI } from "../services/moviesAPI";
 
 export default function MovieList() { 
   const { movies, updateMovies, loading, error, fetchMovies } = useFetchMovies();
@@ -27,6 +28,23 @@ export default function MovieList() {
     setSearchValue("");
   };
 
+
+const handleDelete = async (id) => {
+  try {
+    await MoviesAPI.removeMovie(id);
+    fetchMovies();
+  } catch (error) {
+    console.error('Failed to delete movie:', error);
+  }
+}
+  
+
+  const modal = (
+    <AddModal 
+      onMovieAdded={fetchMovies}
+    />
+  );
+
   const renderMovies= () =>{
     if (!movies) {
       return <p>Loading...</p>;
@@ -34,17 +52,11 @@ export default function MovieList() {
     return movies.map((movie) => {
       return (
         <Col key={movie.id}>
-          <MovieCard movie={movie} />
+          <MovieCard movie={movie} onDelete={handleDelete}/>
         </Col>
       );
     });
   }
-
-  const modal = (
-    <AddModal 
-      onMovieAdded={fetchMovies}
-    />
-  );
 
   if (error) return <ErrorDisplay error={error} />
   if (loading) return <Loading />

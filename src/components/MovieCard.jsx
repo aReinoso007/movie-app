@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 import { useState } from "react";
 import MovieDetail from "./MovieDetail";
-export default function MovieCard({ movie }) {
+export default function MovieCard({ movie, onDelete }) {
   const [selectedMovie, setSelectedMovie] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -13,12 +13,16 @@ export default function MovieCard({ movie }) {
   const toggleModal = () => {
     setIsModalOpen(!isModalOpen);
   };
-
+  const handleOnDelete= () =>{
+    onDelete(movie.id);
+    toggleModal();
+  }
   const movieDetail = (
     <MovieDetail
       movie={selectedMovie}
       toggle={toggleModal}
       isOpen={isModalOpen}
+      onDelete={handleOnDelete}
     />
   );
 
@@ -47,4 +51,5 @@ export default function MovieCard({ movie }) {
 
 MovieCard.propTypes = {
   movie: PropTypes.object.isRequired,
+  onDelete: PropTypes.func.isRequired,
 };

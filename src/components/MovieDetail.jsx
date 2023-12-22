@@ -1,7 +1,9 @@
 /* eslint-disable react/prop-types */
-import { Modal, ModalHeader, ModalBody, Row } from 'reactstrap';
+import { Modal, ModalHeader, ModalBody, Row, ModalFooter, Button } from 'reactstrap';
 import { PropTypes } from "prop-types";
-export default function MovieDetail({movie, isOpen, toggle}) {
+export default function MovieDetail({movie, isOpen, toggle, onDelete}) {
+
+
     return (
         <Modal isOpen={isOpen} toggle={toggle}>
             <ModalHeader toggle={toggle}>{movie.title}</ModalHeader>
@@ -20,6 +22,9 @@ export default function MovieDetail({movie, isOpen, toggle}) {
                 </div>
                 <Row><p>{movie.description}</p></Row>
             </ModalBody>
+            <ModalFooter>
+                <Button color='warning' onClick={onDelete}>Delete</Button>
+            </ModalFooter>
         </Modal>
     );
 }
