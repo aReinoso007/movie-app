@@ -14,7 +14,8 @@ json-server src/db/db.json --port 3030
 ## Architecture
 1. Project Structure
 
-└── 📁src
+```
+    └── 📁src
     └── App.css
     └── App.jsx
     └── 📁assets
@@ -39,6 +40,7 @@ json-server src/db/db.json --port 3030
         └── axios-config.jsx
         └── axios-utils.jsx
         └── moviesAPI.jsx
+```
 
 - `src`: The source directory where all the application code resides.
   - `App.css`: Contains the global CSS styles for the application.
